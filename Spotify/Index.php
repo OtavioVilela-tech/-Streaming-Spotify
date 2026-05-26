@@ -8,9 +8,11 @@ require_once 'classes/Shorts.php';
 require_once 'classes/Playlist.php';
 
 $musica = new Musica(
-    "Come Thogueder",
+    "Come Together",
     200,
-    "The Beatles"
+    "The Beatles",
+    "Abbey Road",
+    "Rock"
 );
 
 $podcast = new Podcast(
