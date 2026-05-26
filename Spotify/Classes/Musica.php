@@ -1,24 +1,28 @@
 <?php
 
-require_once 'Midia.php';
-class Musica extends Midia {
-    private $artista;
-    private $album;
-    private $genero;
+declare(strict_types=1);
 
-    public function __construct($titulo, $duracao, $artista, $album, $genero) {
-        parent::__construct($titulo, $duracao,);
-        $this->artista = $artista;
-        $this->album = $album;
-        $this->genero = $genero;
+require_once 'Midia.php';
+
+class Musica extends Midia
+{
+    public function __construct(
+        private string $artista,
+        private string $album,
+        private string $genero,
+        string $titulo,
+        int $duracao
+    ) {
+        parent::__construct($titulo, $duracao);
     }
 
-    public function tocar() {
+    public function reproduzir(): string
+    {
         return "
-        Tocando: {$this->titulo}<br>
-        Artista: {$this->artista}<br>
-        Álbum: {$this->album}<br>
-        Gênero: {$this->genero}<br>
-        Duração: {$this->duracao}";
+        Tocando: {$this->getTitulo()} <br>
+        Artista: {$this->artista} <br>
+        Álbum: {$this->album} <br>
+        Gênero: {$this->genero} <br>
+        Duração: {$this->getDuracao()} min";
     }
 }
