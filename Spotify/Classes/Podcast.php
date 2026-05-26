@@ -2,21 +2,23 @@
 
 declare(strict_types=1);
 
-require_once "Midia.php";
+require_once 'Midia.php';
 
 class Podcast extends Midia
 {
     public function __construct(
-        private string $host,
         string $titulo,
-        int $duracao
+        int $duracao,
+        private string $host
     ) {
         parent::__construct($titulo, $duracao);
     }
 
     public function reproduzir(): string
     {
-        return " Reproduzindo podcast: " . $this->getTitulo() .
-               " - Host: " . $this->host;
+        return
+            "Podcast: {$this->getTitulo()}" . PHP_EOL .
+            "Host: {$this->host}" . PHP_EOL .
+            "Duração: {$this->getDuracao()} min";
     }
 }
