@@ -19,7 +19,7 @@ $podcast = new Podcast(
     "Mitico e Igão"
 );
 
-$video = new VideoCurto(
+$video = new Shorts(
     "Tutorial PHP",
     60,
     "Dev Aprender"
