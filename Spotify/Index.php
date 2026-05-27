@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-require_once 'classes/Musica.php';
-require_once 'classes/Podcast.php';
-require_once 'classes/Shorts.php';
-require_once 'classes/Playlist.php';
+require_once 'Classes/Musica.php';
+require_once 'Classes/Podcast.php';
+require_once 'Classes/Shorts.php';
+require_once 'Classes/Playlist.php';
 
 $musica = new Musica(
     "Come Together",
@@ -27,10 +27,10 @@ $video = new Shorts(
     "Dev Aprender"
 );
 
-$playlist = new Playlist();
+$playlist = new Playlist("Favoritas");
 
-$playlist->adicionarMidia($musica);
-$playlist->adicionarMidia($podcast);
-$playlist->adicionarMidia($video);
+$playlist->adicionar($musica);
+$playlist->adicionar($podcast);
+$playlist->adicionar($video);
 
 $playlist->reproduzirTudo();
