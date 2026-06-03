@@ -1,0 +1,14 @@
+{
+    "name": "otavio/spotify",
+    "description": "App de Streaming",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
+    },
+    "autoload": {
+        "classmap": [
+            "classes/"
+        ]
+    }
+}
+
